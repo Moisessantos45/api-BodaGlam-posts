@@ -8,15 +8,6 @@ const api_login = import.meta.env.VITE_HOST_API;
   <div class="w-full flex justify-center items-center">
     <h1 class="text-white text-3xl">BodaGlam</h1>
   </div>
-
-  <a
-    class="absolute md:right-8 right-4 top-18 z-10 cursor-pointer"
-    href={api_login}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i class="fa-regular fa-user text-3xl text-white"></i></a
-  >
   <button
     class="absolute left-7 top-18 z-10 md:hidden flex openMenu cursor-pointer"
     ><i class="fa-solid fa-bars text-3xl text-white"></i></button
@@ -36,6 +27,14 @@ const api_login = import.meta.env.VITE_HOST_API;
       <li class="color__text"><a href="/category/wedding">Wedding</a></li>
     </ul>
   </nav>
+  <a
+    class="absolute md:right-10 right-6 top-18 z-10 cursor-pointer"
+    href={api_login}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i class="fa-regular fa-user text-3xl text-white"></i></a
+  >
 </header>
 
 <script>

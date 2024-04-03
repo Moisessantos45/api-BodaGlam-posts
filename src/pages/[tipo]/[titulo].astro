@@ -48,9 +48,9 @@ export async function getStaticPaths() {
 <Layout title={titulo.toUpperCase()}>
   {
     datBoda.length > 0 && (
-      <section class="grid grid__container gap-2 p-3 justify-items-center">
+      <section class="grid grid__container gap-2 p-3 justify-items-center mx-auto md:mt-0 mt-10">
         <article class="w-11/12 flex flex-col p-2 gap-3">
-          <figure class="w-full flex justify-center items-center min-h-88 max-h-[431px]">
+          <figure class="w-full flex justify-center items-center md:min-h-88 max-h-[350px] md:max-h-[431px]">
             <img
               src={datBoda[0].imagen !== undefined ? datBoda[0].imagen : ""}
               alt=""
@@ -63,7 +63,7 @@ export async function getStaticPaths() {
             </h4>
             <h4 class="text-slate-400">{datBoda[0].fecha}</h4>
           </div>
-          <article class="12/12 flex flex-col w-full bg__color_gray p-8 gap-3 relative">
+          <article class="12/12 flex flex-col w-full bg__color_gray md:p-8 p-4 gap-3 relative">
             <h1 class="text-white text-3xl font-bold">{datBoda[0].titulo}</h1>
             <div class="w-full p-2">
               <p class="text-zinc-400">{datBoda[0].descripcion}</p>
