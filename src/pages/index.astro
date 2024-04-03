@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Navegacion from "../components/Navegacion.astro";
+---
+
+<Layout title="Welcome to BodaGlam">
+  <Card tipo="todos" page={1} />
+  <Navegacion pageActual={1} />
+</Layout>

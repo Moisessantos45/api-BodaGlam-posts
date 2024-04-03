@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Card from "@/components/Card.astro";
+import type { TypeCards } from "../../Types/types";
+import axios from "axios";
+
+const { tipo } = Astro.params;
+
+const host = import.meta.env.VITE_HOST_BACKEND;
+
+export async function getStaticPaths() {
+  const host = import.meta.env.VITE_HOST_BACKEND;
+  const response = await axios(`${host}/api/1.0/Post`);
+  const data: TypeCards[] = response.data ? response.data : [];
+
+  const newDataBodas = data
+    .filter((item) => item.status === true && item.titulo.trim() !== "")
+    .map((item) => {
+      const titulo = item.titulo.replace(/ /g, "-").toLowerCase();
+      // Reemplaza los caracteres no permitidos con una cadena vacía
+      const tituloValido = titulo.replace(/[\/#\?]/g, "");
+      return {
+        ...item,
+        titulo: tituloValido,
+      };
+    });
+
+  return newDataBodas.map((item) => ({
+    params: { tipo: item.tipo.toLowerCase() },
+  }));
+}
+---
+
+<Layout title={tipo}>
+  <Card tipo={tipo} page={1} />
+</Layout>

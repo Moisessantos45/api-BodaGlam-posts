@@ -1,0 +1,84 @@
+---
+
+---
+
+<footer class="w-full md:gap-4 gap-5 p-4 grid_container-footer">
+  <div class="w-full flex flex-col gap-5">
+    <h1 class="text-white font-bold text-xl">About</h1>
+    <p class="text-slate-300">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis,
+      illum commodi ratione nostrum possimus saepe consequuntur illo libero
+      aliquam! Modi ab perspiciatis natus obcaecati nulla. Qui nam doloremque
+      cum iste.
+    </p>
+  </div>
+  <div class="w-52 flex flex-col gap-5">
+    <h1 class="text-white font-bold text-xl">Categories</h1>
+    <ul class="w-full flex flex-col justify-center text-slate-300 gap-3">
+      <li>Engagement</li>
+      <li>Makeup</li>
+      <li>Photography</li>
+      <li>Reception</li>
+      <li>Style</li>
+      <li>Wedding</li>
+    </ul>
+  </div>
+  <div class="w-full flex-col flex gap-5">
+    <h1 class="text-white font-bold text-xl">Gallery</h1>
+    <figure
+      class="w-full gap-1 grid_container-footer_gallery justify-items-center"
+    >
+      <img src="/public/img/2.png" alt="" class="w-full" />
+      <img src="/public/img/2.png" alt="" class="w-full" />
+      <img src="/public/img/2.png" alt="" class="w-full" />
+      <img src="/public/img/2.png" alt="" class="w-full" />
+      <img src="/public/img/2.png" alt="" class="w-full" />
+      <img src="/public/img/2.png" alt="" class="w-full" />
+    </figure>
+  </div>
+</footer>
+
+<style>
+  .grid_container-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background: #111;
+  }
+
+  .grid_container-footer_gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  }
+
+  @media only screen and (max-width: 1170px) {
+    .grid_container-footer {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .grid_container-footer_gallery {
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    }
+  }
+
+  @media only screen and (max-width: 920px) {
+    .grid_container-footer_gallery {
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    }
+  }
+
+  @media only screen and (max-width: 830px) {
+    .grid_container-footer{
+      grid-template-columns: 1fr;
+    }
+
+    .grid_container-footer_gallery {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+
+  @media only screen and (max-width: 765px) {
+    .grid_container-footer_gallery {
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+  }
+</style>

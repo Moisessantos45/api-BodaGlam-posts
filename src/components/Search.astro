@@ -1,0 +1,66 @@
+---
+
+---
+
+<aside
+  class="w-full flex flex-col gap-5 p-2 items-center bg__container_aside h-[130vh]"
+>
+  <div class="w-11/12 flex justify-center">
+    <form class="formSearch flex w-full justify-center gap-2">
+      <button
+        class="bg__btn-color flex justify-center items-center w-20 h-9 text-white"
+        type="submit">Search</button
+      >
+      <input
+        type="search"
+        name="search"
+        id="search"
+        class="lg:w-auto w-9/12 h-9 border-none outline-none search"
+      />
+    </form>
+  </div>
+  <div class="flex flex-col w-11/12 gap-5">
+    <h1 class="font-bold text-2xl text-white">Recent Posts</h1>
+    <ul class="flex flex-col gap-4">
+      <li class="text-zinc-400">Love Forever</li>
+      <li class="text-zinc-400">Photographer</li>
+      <li class="text-zinc-400">Creative Styling</li>
+      <li class="text-zinc-400">Sensation</li>
+      <li class="text-zinc-400">Spring Wedding</li>
+    </ul>
+  </div>
+  <div class="flex flex-col w-11/12 gap-5">
+    <h1 class="font-bold text-2xl text-white">Categories</h1>
+    <ul class="flex flex-col gap-4">
+      <li class="text-zinc-400">
+        <a href="/category/engagement">Engagement</a>
+      </li>
+      <li class="text-zinc-400"><a href="/category/makeup">Makeup</a></li>
+      <li class="text-zinc-400">
+        <a href="/category/photography">Photography</a>
+      </li>
+      <li class="text-zinc-400"><a href="/category/reception">Reception</a></li>
+      <li class="text-zinc-400"><a href="/category/style">Style</a></li>
+      <li class="text-zinc-400"><a href="/category/wedding">Wedding</a></li>
+    </ul>
+  </div>
+</aside>
+
+<script>
+  const form = document.querySelector(".formSearch") as HTMLFormElement;
+  const search = document.querySelector(".search") as HTMLInputElement;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const valor = search.value.toLowerCase()
+    window.location.replace(`/category/${valor}`)
+  });
+</script>
+<style>
+  .bg__container_aside {
+    background: #111;
+  }
+
+  .bg__btn-color {
+    background: #ff4c60;
+  }
+</style>

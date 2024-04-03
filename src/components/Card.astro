@@ -1,0 +1,144 @@
+---
+import axios from "axios";
+import type { TypeCards } from "../Types/types";
+import { shortDat } from "../Api/api";
+
+const host = import.meta.env.VITE_HOST_BACKEND;
+
+interface Props {
+  tipo: string;
+  page: number;
+}
+
+const { tipo, page } = Astro.props;
+const startIndex = (page - 1) * 6;
+let endIndex = 0;
+
+let newDataBodas: TypeCards[] = [];
+let newDataBodasFilter: TypeCards[] = [];
+try {
+  const response = await axios(`${host}/api/1.0/Post`);
+  const data: TypeCards[] = response.data ? response.data : [];
+  const shortDataNew = data.sort((a, b) => {
+    const dateA = shortDat(a.fecha);
+    const dateB = shortDat(b.fecha);
+    return dateB.getTime() - dateA.getTime();
+  });
+
+  newDataBodas = shortDataNew.map((item) => {
+    if (item.titulo.trim() !== "") {
+      const titulo = item.titulo.replace(/ /g, "-").toLowerCase();
+      // Reemplaza los caracteres no permitidos con una cadena vacía
+      const tituloValido = titulo.replace(/[\/#\?]/g, "");
+      return {
+        ...item,
+        titulo: tituloValido,
+      };
+    }
+    return item;
+  });
+  endIndex = Math.min(startIndex + 6, newDataBodas.length);
+  newDataBodasFilter = newDataBodas
+    .filter((item) =>
+      tipo === "todos"
+        ? item
+        : item.tipo.toLowerCase().includes(tipo.toLowerCase())
+    )
+    .slice(startIndex, endIndex);
+} catch (error) {
+  newDataBodas = [];
+  newDataBodasFilter = [];
+}
+---
+
+<section class="w-12/12 grid_container gap-4 m-auto p-5">
+  {
+    newDataBodasFilter.map(
+      (item) =>
+        item.status && (
+          <figure
+            class=" w-full flex flex-col gap-2 relative min-h-98 items-center"
+            data-id={item.id}
+          >
+            <img
+              src={item.imagen}
+              alt=""
+              class=" md:w-12/12 w-full max-h-64 min-h-[255px] object-cover"
+            />
+            <div class=" absolute mg:bottom-1 lg:bottom-4 md:bottom-3 sm:bottom-1 bottom-10 flex flex-col bg__card_info md:w-10/12 w-11/12 rounded p-3 gap-2">
+              <h5 class="color__text font-bold">{item.tipo}</h5>
+              <a href={`/${item.tipo.toLowerCase()}/${item.titulo}`}>
+                <h1 class=" text-white font-bold uppercase">
+                  {item.titulo.replace(/-/g, " ")}
+                </h1>
+              </a>
+
+              <div class=" w-full flex justify-evenly">
+                <h4 class=" text-slate-300">{item.fecha}</h4>
+                <span class=" w-[1.5px] h-5 bg-zinc-400" />
+                <h4 class="text-slate-300">{item.fecha}</h4>
+              </div>
+              <p class=" text-slate-300 text-sm">
+                {item.descripcion.substring(0, 80)}
+              </p>
+            </div>
+          </figure>
+        )
+    )
+  }
+</section>
+
+<script>
+  const verfyElementExists = (
+    list: NodeListOf<HTMLElement>,
+    id: string
+  ): HTMLElement | null => {
+    let element = null;
+    list.forEach((item) => {
+      const idElement = item.dataset.id;
+      if (id === idElement) {
+        element = item;
+      }
+    });
+    return element;
+  };
+
+  const content = document.querySelector(".grid_container") as HTMLElement;
+  const list = content.querySelectorAll("figure");
+  const firtsElement = content.firstElementChild;
+  const cloneFirtsElement = firtsElement?.cloneNode(true);
+  const img = cloneFirtsElement;
+</script>
+
+<style>
+  .grid_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .bg__card_info {
+    background: #111111;
+  }
+
+  .color__text {
+    color: #ff4c60;
+  }
+
+  @media only screen and (max-width: 1170px) {
+    .grid_container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+
+  @media only screen and (max-width: 765px) {
+    .grid_container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+
+  @media only screen and (max-width: 665px) {
+    .grid_container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

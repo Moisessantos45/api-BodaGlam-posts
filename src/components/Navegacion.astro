@@ -1,0 +1,65 @@
+---
+import type { TypeCards } from "../Types/types";
+import { getAllPost } from "../Api/api";
+
+interface Props {
+  pageActual: number;
+}
+
+const { pageActual } = Astro.props;
+
+let dataBodas: TypeCards[] = [];
+let endIndex = 0;
+const startIndex = (pageActual - 1) * 6;
+
+try {
+  const data: TypeCards[] = await getAllPost();
+  dataBodas = data;
+
+  endIndex = Math.min(startIndex + 6, dataBodas.length);
+} catch (error) {
+  dataBodas = [];
+}
+---
+
+<div class="w-full justify-center flex items-center p-3 content gap-3">
+  <button
+    class={`w-18 rounded-md flex justify-center items-center p-2 prev bg__btn-color ${pageActual > 1 ? "flex" : "hidden"}`}
+  >
+    {Number(+pageActual - 1)}
+  </button>
+  <button
+    class={`w-18 rounded-md ${endIndex < dataBodas.length ? "flex" : "hidden"} justify-center items-center p-2 next bg__btn-color`}
+  >
+    {Number(+pageActual + 1)}
+  </button>
+</div>
+
+<script>
+  const next = document.querySelector(".next") as HTMLButtonElement;
+  const prev = document.querySelector(".prev") as HTMLButtonElement;
+  let pageActual = Number(next.textContent);
+  let valuePrev = Number(prev.textContent);
+  next.addEventListener("click", () => {
+    window.location.replace(`/page/${pageActual}`);
+  });
+
+  prev.addEventListener("click", () => {
+    if (+valuePrev === 1) {
+      window.location.replace("/");
+    } else {
+      // --valuePrev;
+      window.location.replace(`/page/${valuePrev}`);
+    }
+  });
+</script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  .bg__btn-color {
+    background: #ff4c60;
+  }
+</style>

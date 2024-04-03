@@ -1,0 +1,39 @@
+---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/boda.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+    <script
+      src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+      integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+      crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <style is:global>
+      html {
+        font-family: system-ui, sans-serif;
+        background: #000000;
+      }
+    </style>
+  </body>
+</html>

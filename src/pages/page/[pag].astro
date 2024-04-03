@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+import Navegacion from "../../components/Navegacion.astro";
+import type { TypeCards } from "../../Types/types";
+import axios from "axios";
+
+const { pag } = Astro.params;
+
+export async function getStaticPaths() {
+  const host = import.meta.env.VITE_HOST_BACKEND;
+
+  const response = await axios(`${host}/api/1.0/Post`);
+  const data: TypeCards[] = response.data ? response.data : [];
+  const lengthPage = Math.round(data.length / 6);
+  const arrPage: number[] = new Array(lengthPage)
+    .fill("")
+    .map((_item, i) => i + 1);
+  return arrPage.map((item) => ({
+    params: { pag: item },
+  }));
+}
+---
+
+<Layout title={`page ${pag}`}>
+  <Card tipo="todos" page={+pag} />
+  <Navegacion pageActual={+pag} />
+</Layout>

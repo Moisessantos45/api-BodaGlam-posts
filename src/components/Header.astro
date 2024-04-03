@@ -1,0 +1,73 @@
+---
+const api_login = import.meta.env.VITE_HOST_API;
+---
+
+<header
+  class="w-full relative top-0 left-0 p-3 flex justify-center items-center flex-wrap gap-5"
+>
+  <div class="w-full flex justify-center items-center">
+    <h1 class="text-white text-3xl">BodaGlam</h1>
+  </div>
+
+  <a
+    class="absolute md:right-8 right-4 top-18 z-10 cursor-pointer"
+    href={api_login}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i class="fa-regular fa-user text-3xl text-white"></i></a
+  >
+  <button
+    class="absolute left-7 top-18 z-10 md:hidden flex openMenu cursor-pointer"
+    ><i class="fa-solid fa-bars text-3xl text-white"></i></button
+  >
+  <nav class="w-full flex justify-center bg__header_list">
+    <ul
+      class="w-full justify-center gap-6 p-3 items-center text-white rounded-md md:flex-row flex-col menu md:mt-0 mt-6"
+    >
+      <li class="color__text"><a href="/">Home</a></li>
+      <li class="color__text"><a href="/category/engagement">Engagement</a></li>
+      <li class="color__text"><a href="/category/makeup">Makeup</a></li>
+      <li class="color__text">
+        <a href="/category/photography">Photography</a>
+      </li>
+      <li class="color__text"><a href="/category/reception">Reception</a></li>
+      <li class="color__text"><a href="/category/style">Style</a></li>
+      <li class="color__text"><a href="/category/wedding">Wedding</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const btn = document.querySelector(".openMenu") as HTMLButtonElement;
+  const menu = document.querySelector(".menu") as HTMLElement;
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("openList");
+  });
+</script>
+
+<style>
+  .bg__header_list {
+    background: #111111;
+  }
+
+  .color__text:hover {
+    color: #ff4c60;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      transition: display ease-in 0.5s;
+    }
+
+    .openList {
+      display: flex;
+      transition: display ease-in 0.5s;
+    }
+  }
+</style>

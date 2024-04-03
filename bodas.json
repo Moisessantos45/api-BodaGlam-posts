@@ -1,0 +1,121 @@
+{
+  "bodas": [
+    {
+      "id": "1",
+      "tipo": "Engagement",
+      "imagen": "/public/img/1.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "love forever",
+      "author": "by admin",
+      "fecha": "marzo 25, 2024"
+    },
+    {
+      "id": "2",
+      "tipo": "Makeup",
+      "imagen": "/public/img/2.png",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "Photographer",
+      "fecha": "marzo 26, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "3",
+      "tipo": "Photography",
+      "imagen": "/public/img/3.jpg",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "create styling",
+      "fecha": "marzo 22, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "4",
+      "tipo": "Reception",
+      "imagen": "/public/img/4.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "sensation",
+      "fecha": "marzo 24, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "5",
+      "tipo": "Style",
+      "imagen": "/public/img/5.png",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "spring wedding",
+      "fecha": "marzo 27, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "6",
+      "tipo": "Wedding",
+      "imagen": "/public/img/6.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "just married",
+      "fecha": "marzo 25, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "7",
+      "tipo": "Style",
+      "imagen": "/public/img/6.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "just married",
+      "fecha": "marzo 25, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "8",
+      "tipo": "Wedding",
+      "imagen": "/public/img/6.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "just married",
+      "fecha": "marzo 25, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "9",
+      "tipo": "Makeup",
+      "imagen": "/public/img/6.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "just married",
+      "fecha": "marzo 25, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "10",
+      "tipo": "Engagement",
+      "imagen": "/public/img/6.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "just married",
+      "fecha": "marzo 25, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "11",
+      "tipo": "Photography",
+      "imagen": "/public/img/6.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "just married",
+      "fecha": "marzo 25, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "12",
+      "tipo": "Reception",
+      "imagen": "/public/img/6.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "just married",
+      "fecha": "marzo 25, 2024",
+      "author": "by admin"
+    },
+    {
+      "id": "13",
+      "tipo": "Engagement",
+      "imagen": "/public/img/1.webp",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sunt laboriosam blanditiis exercitationem sit vero dolorem, soluta velit veritatis repellendus aperiam. Repudiandae assumenda labore tempora nesciunt officiis! Doloremque, sed fugit.",
+      "titulo": "love forever",
+      "author": "by admin",
+      "fecha": "marzo 25, 2024"
+    }
+  ]
+}
